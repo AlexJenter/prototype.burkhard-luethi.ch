@@ -12,6 +12,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "deploy": "ssh archit44@burkhard-luethi.ch < script.sh"
-  }
+    "deploy": "ssh archit44@burkhard-luethi.ch < ./scripts/deploy.sh"
+  },
+  "homepage": "http://burkhard-luethi.ch/beta"
 }
