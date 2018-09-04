@@ -1,20 +1,16 @@
 {
   "name": "burkhard-luethi",
-  "version": "0.0.1",
-  "description": "",
-  "main": "index.js",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-scripts": "1.1.5"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy":"ssh archit44@burkhard-luethi.ch < ./scripts/deploy.sh"
-  },
-  "repository": {
-	  "type": "git",
-	  "url": "git+https://github.com/AlexJenter/prototype.burkhard-luethi.ch.git"
-  },
-  "author": "Alex Jenter <jenteralex@gmail.com> (https://alexjenter.github.io/cv/)",
-  "license": "MIT",
-  "bugs": {
-	  "url": "https://github.com/AlexJenter/prototype.burkhard-luethi.ch/issues"
-  },
-  "homepage": "https://github.com/AlexJenter/prototype.burkhard-luethi.ch#readme"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
 }
