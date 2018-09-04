@@ -14,5 +14,5 @@
     "eject": "react-scripts eject",
     "deploy": "ssh archit44@burkhard-luethi.ch < ./scripts/deploy.sh"
   },
-  "homepage": "http://burkhard-luethi.ch/beta"
+  "homepage": "http://burkhard-luethi.ch/beta/build"
 }
