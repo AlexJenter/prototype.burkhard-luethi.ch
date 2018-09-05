@@ -1,33 +1,37 @@
 import React, { Component } from "react";
 import data from "./data"
-import logo from "./logo.svg";
 import "./App.css";
 
 
 
-const TextTile = ({title, type, body}) => (
-  <div className="tile tile--text">
-    <h2 className="tile__title">{title}</h2>
-    <p className="tile__body" dangerouslySetInnerHTML={{ __html: body }}/>
+const TextTile = ({title, body, bem}) => (
+  <div className={bem("")}>
+    <h2 className={bem("title")}>{title}</h2>
+    <p className={bem("body")} dangerouslySetInnerHTML={{ __html: body }}/>
   </div>
 )
 
-const ImageTile = ({ title, src }) => (
-  <div className="tile tile--image">
-    <h2 className="tile__title">{title}</h2>
-    <img className="tile__image" src={src} alt=""/>
+const ImageTile = ({ title, src, bem }) => (
+  <div className={bem("")}>
+    <h2 className={bem("title")}>{title}</h2>
+    <img className={bem("image")} src={src} alt=""/>
   </div>
 )
 
 const Tile = (props) => {
-  const {title, type, body} = props
+  const {type, mods} = props
+  
+  const bem = block => element => mods.reduce((acc, x) => {
+    return !element
+      ? `${acc} ${block}--${x}`
+      : `${acc} ${block}__${element}--${x}`
+  }, `${block}${element && `__${element}`}`)
+
   return {
-    markup: <TextTile {...props} />,
-    image: <ImageTile {...props} />
+    markup: <TextTile {...props} bem={bem("tile")} />,
+    image: <ImageTile {...props} bem={bem("tile")} />
   }[type] || <p>type not defined</p>
 }
-
-  
 
 class App extends Component {
   render() {
