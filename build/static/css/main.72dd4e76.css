@@ -1,2 +1,0 @@
-body{margin:0;padding:0;font-family:sans-serif}main{display:grid;margin:10px;grid-gap:10px;grid-template-columns:repeat(5,1fr)}.tile{position:relative;height:0;padding-top:100%;overflow:hidden}.tile__body,.tile__image,.tile__title{position:absolute;top:0;left:0}.tile__title{z-index:2;margin:5px 0 0;padding:5px;background:#fff}.tile__image{z-index:0;right:0;bottom:0;width:100%;height:100%;-o-object-fit:cover;object-fit:cover}.tile__body{z-index:1;bottom:0;top:auto;margin-bottom:0}
-/*# sourceMappingURL=main.72dd4e76.css.map*/
