@@ -11,17 +11,18 @@ const TextTile = ({title, body, bem}) => (
   </div>
 )
 
-const ImageTile = ({ title, src, bem }) => (
-  <div className={bem("")}>
-    <h2 className={bem("title")}>{title}</h2>
-    <img className={bem("image")} src={src} alt=""/>
-  </div>
+const ImageTile = ({ title, src, href, bem }) => (
+  <a href={href}>
+    <div className={bem("")}>
+      <h2 className={bem("title")}>{title}</h2>
+      <img className={bem("image")} src={src} alt=""/>
+    </div>
+  </a>
 )
 
 const Tile = (props) => {
   const {type, mods} = props
-  
-  const bem = block => element => mods.reduce((acc, x) => {
+  const bem = block => element => [ type, ...mods ].reduce((acc, x) => {
     return !element
       ? `${acc} ${block}--${x}`
       : `${acc} ${block}__${element}--${x}`
