@@ -1,8 +1,8 @@
 import * as BL from "./images/bl"
 
 const allImages = Object.entries(BL)
-.map(([title, src]) => ({
-  key: 9794700,
+.map(([title, src], i) => ({
+  key: `${title}-${i}`,
   mods: [],
   title,
   type: "image",
@@ -10,8 +10,8 @@ const allImages = Object.entries(BL)
   href: title
 }))
 
-allImages[0] =   {
-  key: 9794792,
+const contact = {
+  key: 0,
   mods: [],
   title: "KONTAKT",
   type: "markup",
@@ -19,22 +19,39 @@ allImages[0] =   {
   href: "kontakt"
 }
 
-allImages[1] = {
-  key: 9794700,
+const kosmos = {
+  key: 1,
   mods: ["width-2x", "height-2x"],
   title: "kosmos",
   type: "image",
   src: BL.kosmos,
-  href: "kosmos"
+  href: "kosmos",
+  sections: [
+    {
+      type: "lala",
+      body: "Hello kosmos"
+    },
+    {
+      type: "markup",
+      body: "Hello kosmos"
+    },
+    {
+      type: "image",
+      src: BL.kosmos
+    },
+    {
+      type: "image",
+      src: BL.kosmos_bistro
+    },
+    {
+      type: "image",
+      src: BL.kosmos_forumstreppe
+    },
+  ]
 }
 
-allImages[6] = {
-  key: 9794700,
-  mods: [],
-  title: "?",
-  type: "markup",
-  body: "<h2>Brauchen sie hilfe bei einer <em>Baueingabe</em>?</h2>",
-  href: "baugesuch"
-}
-
-export default  allImages
+export default  [
+  contact,
+  kosmos,
+  ...allImages
+]
