@@ -1,4 +1,3 @@
-import React from 'react'
 /**
  * @param {Object} props
  * @param {Array} props.iterable

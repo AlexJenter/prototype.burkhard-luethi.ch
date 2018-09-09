@@ -10,17 +10,17 @@ const Index = () => data.map(x => <Tile {...x} />);
 class App extends Component {
   render() {
     return (
-      <BrowserRouter>
+      <BrowserRouter basename="/beta">
         <div className="App">
           <header className="App-header">
-            <Link to="/">
+            <Link to={`${process.env.PUBLIC_URL}/`}>
               <h1 className="App-title">Burkhard & Lüthi Architektur GmbH</h1>
             </Link>
           </header>
           <main>
             <Switch>
-              <Route exact path="/" component={Index} />
-              <Route path="/:id" component={FullPage} />
+              <Route exact path={`${process.env.PUBLIC_URL}/`} component={ Index } />
+              <Route path={`${process.env.PUBLIC_URL}/:id`} component={ FullPage } />
             </Switch>
           </main>
         </div>

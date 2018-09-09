@@ -21,29 +21,29 @@ const contact = {
 
 const kosmos = {
   key: 1,
-  mods: ["width-2x", "height-2x"],
+  mods: [],
   title: "kosmos",
   type: "image",
   src: BL.kosmos,
   href: "kosmos",
   sections: [
     {
-      type: "lala",
-      body: "Hello kosmos"
-    },
-    {
-      type: "markup",
-      body: "Hello kosmos"
-    },
-    {
+      key: 2,
       type: "image",
       src: BL.kosmos
     },
     {
+      key: 1,
+      type: "markup",
+      body: "Hello kosmos"
+    },
+    {
+      key: 3,
       type: "image",
       src: BL.kosmos_bistro
     },
     {
+      key: 4,
       type: "image",
       src: BL.kosmos_forumstreppe
     },

@@ -1,8 +1,8 @@
-import React from 'react'
-export default ({ predicate, childProps, children }) => {
-  const child = children.find(c => c.props.case === predicate) || (
-    <p>case not handeled: {childProps.type}</p>
-  );
-  const TagName = child.type;
-  return <TagName {...childProps} />;
+import React from "react";
+export default ({ match, children }) => {
+  const child =
+    children.find(c => c.props.case === match) ||
+    children.find(c => c.props.case === "default");
+
+  return React.cloneElement(child, child.props);
 };
