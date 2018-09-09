@@ -10,7 +10,7 @@ const Index = () => data.map(x => <Tile {...x} />);
 class App extends Component {
   render() {
     return (
-      <BrowserRouter basename="/beta">
+      <BrowserRouter>
         <div className="App">
           <header className="App-header">
             <Link to={`${process.env.PUBLIC_URL}/`}>
