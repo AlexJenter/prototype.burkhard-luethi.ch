@@ -9,7 +9,7 @@ const TextTile = ({ title, body, bem }) => (
 );
 
 const ImageTile = ({ title, src, href, bem }) => (
-  <Link to={href}>
+  <Link to="/kosmos">
     <div className={bem("")}>
       <h2 className={bem("title")}>{title}</h2>
       <img className={bem("image")} src={src} alt="" />
