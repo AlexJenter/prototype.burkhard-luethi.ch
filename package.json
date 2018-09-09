@@ -14,7 +14,12 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "deploy": "ssh archit44@burkhard-luethi.ch < ./scripts/deploy.sh"
+    "deploy:remote": "sftp archit44@burkhard-luethi.ch < ./scripts/deploy.remote.sh",
+    "clean:remote": "ssh archit44@burkhard-luethi.ch < ./scripts/clean.remote.sh",
+    "upload": "run-s build clean:remote deploy:remote"
   },
-  "homepage": "http://burkhard-luethi.ch/beta/build"
+  "homepage": "http://burkhard-luethi.ch/beta/",
+  "devDependencies": {
+    "npm-run-all": "^4.1.3"
+  }
 }
