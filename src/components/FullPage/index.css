@@ -1,0 +1,30 @@
+main#full-page {
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.slide-container {
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height:  100vh;
+  display: flex;
+  width: calc(var(--len) * 100vw);
+  transform: translateX(calc(-100vw * var(--pos)));
+  transition: transform 300ms ease-in-out;
+}
+
+.slide {
+  box-sizing: border-box;
+  display: flex;
+  padding: var(--gutter);
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
+
+.slide--image {
+  object-fit: contain;
+}

@@ -35,7 +35,7 @@ const kosmos = {
     {
       key: 1,
       type: "markup",
-      body: "Hello kosmos"
+      body: "<p>Hello kosmos</p>"
     },
     {
       key: 3,

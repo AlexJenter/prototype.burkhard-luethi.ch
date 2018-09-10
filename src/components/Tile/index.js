@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import React from 'react'
+import Switch from "../helpers/Switch";
+import React from "react";
 
 const TextTile = ({ title, body, bem }) => (
   <div className={bem("")}>
@@ -9,12 +10,12 @@ const TextTile = ({ title, body, bem }) => (
 );
 
 const ImageTile = ({ title, src, href, bem }) => (
-  <Link to={`${process.env.PUBLIC_URL}/${href}`}>
-    <div className={bem("")}>
+  <div className={bem("")}>
+    <Link className={bem("link")} to={`${process.env.PUBLIC_URL}/${href}`}>
       <h2 className={bem("title")}>{title}</h2>
       <img className={bem("image")} src={src} alt="" />
-    </div>
-  </Link>
+    </Link>
+  </div>
 );
 
 export default props => {
@@ -27,9 +28,10 @@ export default props => {
     }, `${block}${element && `__${element}`}`);
 
   return (
-    {
-      markup: <TextTile {...props} bem={bem("tile")} />,
-      image: <ImageTile {...props} bem={bem("tile")} />
-    }[type] || <p>type not defined</p>
+    <Switch match={props.type}>
+      <TextTile case="markup" {...props} bem={bem("tile")} />
+      <ImageTile case="image" {...props} bem={bem("tile")} />
+      <p case="default">Default Case hit</p>
+    </Switch>
   );
 };
