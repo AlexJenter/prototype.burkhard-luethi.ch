@@ -5,6 +5,7 @@ import PrevNextBtn from "../PrevNextBtn";
 import List from "../helpers/List";
 import Switch from "../helpers/Switch";
 import data from "../../data";
+import * as U from "../../utils"
 import "./index.css";
 
 const Markup = props => (
@@ -42,7 +43,7 @@ export default class Fullpage extends Component {
   setPosition = position => _ => {
     const { length } = this.state;
     this.setState({
-      position: (length + position) % length
+      position: U.clamp(0, length - 1, position)
     });
   };
 
