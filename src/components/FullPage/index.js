@@ -12,6 +12,19 @@ const Markup = props => (
 );
 const Image = props => <img {...props} alt="" />;
 
+const Table = props => (
+  <table {...props}>
+  <tbody>
+    {props.rows.map(row => (
+      <tr>
+        <td className="label">{row[0]}</td>
+        <td className="value">{row[1]}</td>
+      </tr>
+    ))}
+    </tbody>
+  </table>
+);
+
 export default class Fullpage extends Component {
   state = {
     position: 0,
@@ -71,6 +84,7 @@ export default class Fullpage extends Component {
                   <Switch match={item.type} key={item.key}>
                     <Markup case="markup" {...itemProps} />
                     <Image case="image" {...itemProps} />
+                    <Table case="table" {...itemProps} />
                     <p case="default">Default case hit: {item.type}</p>
                   </Switch>
                 );

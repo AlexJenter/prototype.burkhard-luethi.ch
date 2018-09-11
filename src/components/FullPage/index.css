@@ -9,7 +9,7 @@ main#full-page {
   position: absolute;
   left: 0;
   top: 0;
-  height:  100vh;
+  height: 100vh;
   display: flex;
   width: calc(var(--len) * 100vw);
   transform: translateX(calc(-100vw * var(--pos)));
@@ -27,4 +27,15 @@ main#full-page {
 
 .slide--image {
   object-fit: contain;
+}
+
+.slide--table {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 2;
+}
+.slide--table .label {
+  font-weight: bold;
+  padding-right: 3em;
 }
