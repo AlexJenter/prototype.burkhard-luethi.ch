@@ -14,12 +14,24 @@ const Image = props => <img {...props} alt="" />;
 
 export default class Fullpage extends Component {
   state = {
-    position: 0
+    position: 0,
+    length: 0
+  };
+
+  componentDidMount = () => {
+    const { match } = this.props;
+    const { sections } = data.find(x => x.title === match.params.id);
+    this.setState({
+      length: sections.length || 0
+    });
   };
 
   setPosition = position => _ => {
-    this.setState({ position })
-  }
+    const { length } = this.state;
+    this.setState({
+      position: (length + position) % length
+    });
+  };
 
   render() {
     const { position } = this.state;
@@ -34,9 +46,9 @@ export default class Fullpage extends Component {
     const buttonActions = {
       actions: {
         prev: this.setPosition(position - 1),
-        next: this.setPosition(position + 1),
+        next: this.setPosition(position + 1)
       }
-    }
+    };
 
     const pageDotsProps = {
       position,
@@ -46,7 +58,7 @@ export default class Fullpage extends Component {
 
     return (
       <React.Fragment>
-        <Header title={`← ${title}`} />
+        <Header title={`↫ ${title}`} />
         <main id="full-page">
           <div className="slide-container" style={containerStyle}>
             <List iterable={sections}>
@@ -66,7 +78,7 @@ export default class Fullpage extends Component {
             </List>
           </div>
         </main>
-        <PrevNextBtn {...buttonActions}/>
+        <PrevNextBtn {...buttonActions} />
         <PageDots {...pageDotsProps} />
       </React.Fragment>
     );
