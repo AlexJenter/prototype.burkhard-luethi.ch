@@ -17,16 +17,8 @@ export default class Fullpage extends Component {
     position: 0
   };
 
-  prev = () => {
-    this.setState(state => ({
-      position: state.position - 1
-    }))
-  }
-
-  next = () => {
-    this.setState(state => ({
-      position: state.position + 1
-    }))
+  setPosition = position => _ => {
+    this.setState({ position })
   }
 
   render() {
@@ -40,13 +32,16 @@ export default class Fullpage extends Component {
     };
 
     const buttonActions = {
-      prev: this.prev,
-      next: this.next
+      actions: {
+        prev: this.setPosition(position - 1),
+        next: this.setPosition(position + 1),
+      }
     }
 
     const pageDotsProps = {
       position,
-      count: sections.length
+      count: sections.length,
+      setPosition: this.setPosition
     };
 
     return (
@@ -71,7 +66,7 @@ export default class Fullpage extends Component {
             </List>
           </div>
         </main>
-        <PrevNextBtn actions={buttonActions}/>
+        <PrevNextBtn {...buttonActions}/>
         <PageDots {...pageDotsProps} />
       </React.Fragment>
     );
