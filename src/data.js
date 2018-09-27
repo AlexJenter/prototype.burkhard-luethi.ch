@@ -21,7 +21,9 @@ const contact = {
 
 const kosmos = {
   key: 1,
-  mods: [],
+  mods: ["width-2x", "height-2x"],
+  // mods: ["height-2x"],
+  // mods: ["width-2x"],
   title: "kosmos",
   type: "image",
   src: BL.kosmos,
@@ -35,7 +37,7 @@ const kosmos = {
     {
       key: 1,
       type: "markup",
-      body: "<p>Hello kosmos</p>"
+      body: "<p><strong>Hello kosmos</strong> — Cupiditate odio enim minima ab facere. Iusto impedit temporibus deleniti. Iure doloribus quis culpa aspernatur incidunt. Iste voluptas reiciendis similique ipsa perspiciatis eum. Incidunt aspernatur pariatur quidem cupiditate asperiores beatae. Consectetur animi ad eum voluptate reprehenderit. Voluptas reprehenderit iusto architecto. Eos magni fugiat dolor blanditiis quam. Debitis minima at laboriosam. Placeat possimus sunt est qui beatae dolor aliquid. Quidem illo vitae ratione numquam. Alias totam autem dignissimos corporis voluptate. Illo fugiat placeat expedita nostrum explicabo. Vel aliquid ducimus vel occaecati nemo. Suscipit animi voluptatem asperiores vero quisquam incidunt.</p>"
     },
     {
       key: 3,
@@ -60,5 +62,13 @@ const kosmos = {
     },
   ]
 };
+const text = {
+  key: 2,
+  mods: ["width-2x", "large-type"],
+  title: "kosmos",
+  type: "markup",
+  body: "Wir helfen ihnen auch mit ihrer Baueingabe <br><br><a href='kosmos'>fragen sie uns</a>",
+};
 
-export default [contact, kosmos, ...allImages];
+
+export default [contact, kosmos, text, ...allImages];

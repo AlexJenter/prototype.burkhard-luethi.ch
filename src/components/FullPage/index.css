@@ -39,3 +39,11 @@ main#full-page {
   font-weight: bold;
   padding-right: 3em;
 }
+
+.slide--markup p {
+  width: 50%;
+}
+
+.slide--markup strong {
+  text-transform: uppercase;
+}
