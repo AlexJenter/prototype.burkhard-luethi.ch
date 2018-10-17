@@ -5,7 +5,7 @@ import PrevNextBtn from "../PrevNextBtn";
 import List from "../helpers/List";
 import Switch from "../helpers/Switch";
 import data from "../../data";
-import * as U from "../../utils"
+import * as U from "../../utils";
 import "./index.css";
 
 const Markup = props => (
@@ -14,16 +14,21 @@ const Markup = props => (
 const Image = props => <img {...props} alt="" />;
 
 const Table = props => (
-  <table {...props}>
-  <tbody>
-    {props.rows.map(row => (
-      <tr>
-        <td className="label">{row[0]}</td>
-        <td className="value">{row[1]}</td>
-      </tr>
-    ))}
-    </tbody>
-  </table>
+  <div {...props}>
+    <div className="content">
+      <h3>{props.title}</h3>
+      <table>
+        <tbody>
+          {props.rows.map(row => (
+            <tr>
+              <td className="label">{row[0]}</td>
+              <td className="value">{row[1]}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
 );
 
 export default class Fullpage extends Component {

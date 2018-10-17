@@ -1,5 +1,5 @@
 html {
-  --gutter: 20px;
+  --gutter: 30px;
 }
 
 body {
@@ -11,7 +11,7 @@ body {
 main#index {
   display: grid;
   grid-gap: var(--gutter);
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   grid-auto-flow: dense;
 }
 

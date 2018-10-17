@@ -31,9 +31,24 @@ main#full-page {
 
 .slide--table {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   line-height: 2;
+}
+.slide--table table {
+  margin: 0;
+  padding: 0;
+  border-collapse: collapse;
+}
+
+.slide--table table,
+.slide--table th,
+.slide--table td {
+  margin: 0;
+  padding: 0;
+  border: none;
+  vertical-align: text-top;
 }
 .slide--table .label {
   font-weight: bold;
@@ -42,8 +57,14 @@ main#full-page {
 
 .slide--markup p {
   width: 50%;
+  line-height: 1.3;
+  word-spacing: 2px;
+  /* text-align: justify; */
 }
 
 .slide--markup strong {
-  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  /* text-transform: uppercase;
+  font-weight: 400; */
+  /* font-size: 0.9em; */
 }
