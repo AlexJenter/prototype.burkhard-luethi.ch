@@ -13,9 +13,18 @@ const allImages = Object.entries(BL).map(([title, src], i) => ({
   href: "kosmos"
 }));
 
+const logo = {
+  key: 0,
+  mods: ["logo"],
+  title: "",
+  type: "markup",
+  body: "<h1>Burkhard & Lüthi Architektur GmbH</h1>",
+  href: "#"
+};
+
 const contact = {
   key: 0,
-  mods: [],
+  mods: ["contact"],
   title: "KONTAKT",
   type: "markup",
   body:
@@ -111,4 +120,4 @@ const toTop = {
   body: "<a href='#top'>zurück an die oberfläche</a>"
 };
 
-export default [contact, kosmos, text, ...allImages, toTop];
+export default [logo, contact, kosmos, text, ...allImages, toTop];

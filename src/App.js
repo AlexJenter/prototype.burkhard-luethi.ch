@@ -9,7 +9,7 @@ import "./App.css";
 
 const Index = () => (
   <Fragment>
-    <Header />
+    {/* <Header /> */}
     <main id="index">
       <List iterable={data}>{item => <Tile {...item} />}</List>
     </main>
