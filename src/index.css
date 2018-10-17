@@ -1,5 +1,5 @@
 html {
-  --gutter: 30px;
+  --gutter: 25px;
 }
 
 body {
@@ -22,7 +22,7 @@ main#index {
 .App-header h1 {
   display: inline-block;
   background-color: white;
-  padding: var(--gutter);
+  padding: var(--gutter) 0;
 }
 
 a {
@@ -41,8 +41,16 @@ a {
   padding: var(--gutter);
 }
 
+.tile:nth-of-type(1) .tile__body--markup {
+  padding: 3em 0;
+}
+
 .tile--markup .tile__title {
   display: none;
+}
+
+.tile--markup:nth-child(1) .tile__title {
+  display: unset;
 }
 
 .tile--width-2x {

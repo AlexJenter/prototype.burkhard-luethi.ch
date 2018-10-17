@@ -10,7 +10,7 @@ const allImages = Object.entries(BL).map(([title, src], i) => ({
   title,
   type: "image",
   src,
-  href: title
+  href: "kosmos"
 }));
 
 const contact = {
@@ -19,7 +19,7 @@ const contact = {
   title: "KONTAKT",
   type: "markup",
   body:
-    "<p> Dufourstrasse 35 <br/> CH 8008 Zürich <br/> <a href='tel:+41 44 262 50 40'>+41 44 262 50 40</a> <br/> <a href='mailto:bul@burkhard-luethi.ch'>bul@burkhard-luethi.ch</a> <br/> </p>",
+    "Dufourstrasse 35 <br/> CH 8008 Zürich <br/> <a href='tel:+41 44 262 50 40'>+41 44 262 50 40</a> <br/> <a href='mailto:bul@burkhard-luethi.ch'>bul@burkhard-luethi.ch</a>",
   href: "kontakt"
 };
 

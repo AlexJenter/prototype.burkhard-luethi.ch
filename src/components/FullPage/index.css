@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+html {
+  font-family: 'Montserrat', sans-serif;
+}
 main#full-page {
   position: fixed;
   left: 0;
