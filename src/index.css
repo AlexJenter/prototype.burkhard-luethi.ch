@@ -1,13 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700');
+
 html {
-  --gutter: 25px;
+  --gutter: 50px;
+  --col-o: #ff7f3a;
+  --col-b: #77eded;
 }
 
+h2, p, a, button {
+  font-family:  "Montserrat", sans-serif;
+}
 body {
   margin: 0;
   padding: var(--gutter);
   font-family: sans-serif;
 }
 
+footer,
 main#index {
   display: grid;
   grid-gap: var(--gutter);
@@ -39,7 +47,7 @@ a {
 }
 
 .tile__body--markup {
-  padding: var(--gutter);
+  padding: var(--gutter);  
 }
 
 .tile__body--height-2x {
@@ -59,7 +67,6 @@ a {
   position: relative;
   top: -7px;
 }
-
 
 .tile--markup .tile__title {
   display: none;
@@ -84,7 +91,8 @@ a {
   height: 0;
 }
 
-.tile__title,
+
+
 .tile__body,
 .tile__image {
   position: absolute;
@@ -93,17 +101,28 @@ a {
 }
 
 .tile__title {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  box-sizing: border-box;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  height: var(--gutter);
+  transform: translate(-50%, -50%);
   z-index: 2;
-  margin: 10px 0 0;
-  padding: 6px 10px 5px 0;
+  padding: 6px 10px 5px;
   background: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .tile__link {
   color: #000;
 }
 .tile__link:visited {
-  color: #ddd;
+  color: pink;
+  color: #000;
 }
 
 .tile__image {
@@ -121,7 +140,13 @@ a {
 }
 
 .tile--large-type {
-  background-color: rebeccapurple;
+  background-color: var(--col-o);
   color: white;
   font-size: 50px;
 }
+.tile--large-type p {
+  width: 0;
+  margin: 0;
+}
+
+

@@ -4,15 +4,22 @@ import Header from "./components/Header";
 import Tile from "./components/Tile";
 import List from "./components/helpers/List";
 import FullPage from "./components/FullPage";
-import data from "./data";
+import {ListView , ListItem} from "./components/ListView";
+import { dataTiles, dataList, dataFooter } from "./data";
 import "./App.css";
 
 const Index = () => (
   <Fragment>
     {/* <Header /> */}
+    <ListView>
+      <List iterable={dataList}>{item => <ListItem {...item} />}</List>
+    </ListView>
     <main id="index">
-      <List iterable={data}>{item => <Tile {...item} />}</List>
+      <List iterable={dataTiles}>{item => <Tile {...item} />}</List>
     </main>
+    <footer>
+      <List iterable={dataFooter}>{item => <Tile {...item} />}</List>
+    </footer>
   </Fragment>
 );
 

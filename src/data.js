@@ -6,7 +6,10 @@ import kosmos_pln1 from "./images/139_kosmos/139_01_Pläne/Burkhard-Luethi_139_K
 
 const allImages = Object.entries(BL).map(([title, src], i) => ({
   key: `${title}-${i}`,
-  mods: [],
+  mods: [
+    Math.random() > 0.5 ? "height-2x" : "default",
+    Math.random() > 0.5 ? "width-2x" : "default"
+  ],
   title,
   type: "image",
   src,
@@ -18,7 +21,8 @@ const logo = {
   mods: ["logo"],
   title: "",
   type: "markup",
-  body: "<h1>Burkhard & Lüthi Architektur GmbH</h1>",
+  body:
+    "<h1>Burkhard & Lüthi Architektur GmbH</h1><p>Dufourstrasse 35 <br/> CH 8008 Zürich <br/> <a href='tel:+41 44 262 50 40'>+41 44 262 50 40</a> <br/> <a href='mailto:bul@burkhard-luethi.ch'>bul@burkhard-luethi.ch</a></p>",
   href: "#"
 };
 
@@ -42,7 +46,7 @@ const kosmos_sections = [
     key: 1,
     type: "markup",
     body:
-      "<p><strong>Der zentrale architektonische Gedanke</strong> besteht darin, den im Grundausbau vorgefundenen Rohbau als architektonische Qualität zu verstehen und zum Erscheinungsbild der Kosmos-Räume zu etablieren. Trotz einer hochinstallierten und komplexen Kino-, Veranstaltungs- und Gastrotechnik, sollen die eingesetzten Materialien von schlichter Eleganz und gleichzeitig von solider und langlebiger Qualität sein. Dadurch entsteht eine Architektur, welche nicht im Vordergrund steht, sondern einen unprätentiösen Hintergrund aufbaut, welcher die Atmosphäre der verschiedenen Bereiche des Kosmos und ihren Akteuren umso bes- ser zur Geltung bringen lässt.<br>Der Kosmos ist selbst gleichermassen Ort und Bindeglied an der Schnittstelle zwischen Europaallee und Langstrasse.</p>"
+      "<p>Der zentrale architektonische Gedanke besteht darin, den im Grundausbau vorgefundenen Rohbau als architektonische Qualität zu verstehen und zum Erscheinungsbild der Kosmos-Räume zu etablieren. Trotz einer hochinstallierten und komplexen Kino-, Veranstaltungs- und Gastrotechnik, sollen die eingesetzten Materialien von schlichter Eleganz und gleichzeitig von solider und langlebiger Qualität sein. Dadurch entsteht eine Architektur, welche nicht im Vordergrund steht, sondern einen unprätentiösen Hintergrund aufbaut, welcher die Atmosphäre der verschiedenen Bereiche des Kosmos und ihren Akteuren umso bes- ser zur Geltung bringen lässt.<br>Der Kosmos ist selbst gleichermassen Ort und Bindeglied an der Schnittstelle zwischen Europaallee und Langstrasse.</p>"
   },
   {
     key: 3,
@@ -100,6 +104,7 @@ const kosmos = {
   title: "kosmos",
   type: "image",
   src: BL.kosmos,
+  // src: kosmos_pln1,
   href: "kosmos",
   sections: kosmos_sections
 };
@@ -109,7 +114,7 @@ const text = {
   title: "kosmos",
   type: "markup",
   body:
-    "Wir helfen ihnen auch mit ihrer Baueingabe <br><br><a href='kosmos'>fragen sie uns</a>"
+    "Wir helfen gerne bei ihrer Bau-eingabe <br><br><a href='kosmos'>fragen sie uns</a>"
 };
 
 const toTop = {
@@ -120,4 +125,19 @@ const toTop = {
   body: "<a href='#top'>zurück an die oberfläche</a>"
 };
 
-export default [logo, contact, kosmos, text, ...allImages, toTop];
+const emptyTile = {
+  key: 0,
+  type: "empty"
+};
+
+const result = allImages.reduce((acc, x) => {
+  return [
+    ...acc,
+    ...(Math.random() < 0.9 ? [x, emptyTile] : [x])
+  ];
+}, []);
+
+export default [kosmos, ...allImages];
+export const dataList = [...allImages];
+export const dataFooter = [toTop];
+export const dataTiles =[logo, kosmos, text, ...result];

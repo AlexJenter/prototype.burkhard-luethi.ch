@@ -1,8 +1,14 @@
 .page-dots {
-  position: fixed;
-  left: 50%;
-  bottom: var(--gutter);
-  transform: translateX(-50%);
+  --s: 15px;
+  --m: 40px;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: var(--gutter);
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .page-dots ul {
@@ -11,17 +17,22 @@
 }
 
 .page-dot {
+  box-sizing: border-box;
   display: inline-block;
   padding: 0;
-  margin: 10px;
-  height: 20px;
-  width: 20px;
+  margin-left: var(--m);
+  margin-right: var(--m);
+  height: var(--s);
+  width: var(--s);
   background-color: white;
   appearance: none;
   border: none;
   border-radius: 50%;
+  border: 1px solid black;
+  transform: translateY(-3px);
 }
 
 .page-dot--active {
-  background-color: hotpink;
+  background-color: pink;
+  box-shadow: 0 0 0 2px white inset;
 }

@@ -1,0 +1,43 @@
+.list-view {
+  position: fixed;
+  z-index: 100;
+  height: 100vh;
+  left: 100vw;
+  top: 0;
+}
+.list-view__toggle {
+  z-index: 1;
+  width: var(--gutter);
+  height: var(--gutter);
+  appearance: none;
+  border: none;
+  position: absolute;
+  background-color: #fff;
+  right: 100%;
+  font-size: 30px;
+  font-weight: bold;
+}
+.list-view__container {
+  z-index: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: #fff;
+  transform: translateX(0);
+  transition: transform 200ms;
+  overflow-y: auto;
+}
+
+.list-view__container.open {
+  transform: translateX(-100%)
+}
+
+.list-view__container a {
+  text-decoration: none;
+  display: block;
+  height: var(--gutter);
+  padding-left: var(--gutter);
+  font-size: 25px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+

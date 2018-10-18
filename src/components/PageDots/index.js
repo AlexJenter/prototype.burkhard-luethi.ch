@@ -14,9 +14,7 @@ export default ({ position = 0, count = 10, setPosition }) => {
             <button
               onClick={setPosition(i)}
               className={`page-dot${bool ? " page-dot--active" : ""}`}
-            >
-              {i}
-            </button>
+            ></button>
           ))}
       </ul>
     </div>

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import Header from "../Header";
 import PageDots from "../PageDots";
 import PrevNextBtn from "../PrevNextBtn";
@@ -77,7 +78,8 @@ export default class Fullpage extends Component {
 
     return (
       <React.Fragment>
-        <Header title={`↫ ${title}`} />
+        <Link className="back-link" to={`${process.env.PUBLIC_URL}/`}>╳</Link>
+        <h2 className="page-title">{title}</h2>
         <main id="full-page">
           <div className="slide-container" style={containerStyle}>
             <List iterable={sections}>

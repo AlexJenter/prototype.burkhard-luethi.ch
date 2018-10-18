@@ -6,7 +6,9 @@
   appearance: none;
   border: none;
   background-color: #fff;
-  padding: var(--gutter);
+  /* padding: var(--gutter); */
+  font-size: 30px;
+  font-weight: bold;
 }
 .prev-next-button.prev {
   left: 0;

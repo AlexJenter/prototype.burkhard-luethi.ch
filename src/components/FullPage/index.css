@@ -1,11 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
-html {
-  font-family: 'Montserrat', sans-serif;
-}
 main#full-page {
   position: fixed;
   left: 0;
   top: 0;
+  z-index: 0;
 }
 
 .slide-container {
@@ -60,7 +57,11 @@ main#full-page {
 }
 
 .slide--markup p {
-  width: 50%;
+  font-size: 24px;
+  width: 45ch;
+  max-width: 100%;
+  /* columns: 2;
+  column-gap: 2em; */
   line-height: 1.3;
   word-spacing: 2px;
   /* text-align: justify; */
@@ -68,7 +69,25 @@ main#full-page {
 
 .slide--markup strong {
   letter-spacing: 0.5px;
-  /* text-transform: uppercase;
-  font-weight: 400; */
-  /* font-size: 0.9em; */
+}
+
+.back-link {
+  position: absolute;
+  top: calc(var(--gutter) * 0.5);
+  left: calc(var(--gutter) * 0.5);
+  transform: translate(-50%, -50%);
+
+  z-index: 1000;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.page-title {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  text-transform: uppercase;
+  transform: translate(-50%, -20%);
 }

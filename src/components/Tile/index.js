@@ -18,6 +18,10 @@ const ImageTile = ({ title, src, href, bem }) => (
   </div>
 );
 
+const EmptyTile = ({ bem }) => (
+  <div className="tile tile--empty"></div>
+);
+
 export default props => {
   const { type, mods } = props;
   const bem = block => element =>
@@ -31,6 +35,7 @@ export default props => {
     <Switch match={props.type}>
       <TextTile case="markup" {...props} bem={bem("tile")} />
       <ImageTile case="image" {...props} bem={bem("tile")} />
+      <EmptyTile case="empty" {...props} bem={bem("tile")} />
       <p case="default">Default Case hit</p>
     </Switch>
   );
