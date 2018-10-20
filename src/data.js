@@ -22,7 +22,7 @@ const logo = {
   title: "",
   type: "markup",
   body:
-    "<h1>Burkhard & Lüthi Architektur GmbH</h1><p>Dufourstrasse 35 <br/> CH 8008 Zürich <br/> <a href='tel:+41 44 262 50 40'>+41 44 262 50 40</a> <br/> <a href='mailto:bul@burkhard-luethi.ch'>bul@burkhard-luethi.ch</a></p>",
+    "<h1><span>Burkhard & Lüthi</span> <span>Architektur GmbH</span></h1><br><p>Dufourstrasse 35 <br/> CH 8008 Zürich<br/><br/><a href='tel:+41 44 262 50 40'>+41 44 262 50 40</a> <br/> <a href='mailto:bul@burkhard-luethi.ch'>bul@burkhard-luethi.ch</a></p>",
   href: "#"
 };
 
