@@ -16,7 +16,8 @@ p,
 a,
 button,
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  letter-spacing: 1px;
 }
 
 h1 {
@@ -27,6 +28,12 @@ h1 {
 h1 span {
   white-space: nowrap;
 }
+
+h2 {
+  font-size: 1rem;
+  font-weight: normal;
+}
+
 body {
   margin: calc(0.5 * var(--gutter));
 }
@@ -35,17 +42,6 @@ a {
   display: block;
   color: black;
 }
-
-/* .App-header {
-  position: relative;
-  z-index: 1;
-}
-.App-header h1 {
-  display: inline-block;
-  background-color: white;
-  padding: var(--gutter) 0;
-} */
-
 
 .tile {
   position: relative;
@@ -75,9 +71,6 @@ a {
   padding: calc(var(--tile-pad) * 0.5);
 }
 
-.tile__wrapper--large-type {
-  background-color: var(--col-o);
-}
 
 .tile--empty {
   display: none;
@@ -98,12 +91,13 @@ a {
 }
 
 .tile--logo p {
-  padding: 0;
-  margin: 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 .tile--logo h1 {
   position: relative;
-  width: calc(100% - 50px);
+  left: 0;
   top: 0;
 }
 
@@ -121,12 +115,10 @@ a {
   position: absolute;
   box-sizing: border-box;
   margin: 0;
-  top: 50%;
-  left: 50%;
-  height: var(--tile-title-h);
-  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
   z-index: 2;
-  padding: 6px 10px 5px;
+  padding: 3px 6px 5px 0;
   background: #fff;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -155,13 +147,14 @@ a {
 }
 
 .tile--large-type {
-  color: white;
-  font-size: 50px;
+  font-size: 2rem;
+  font-weight: normal;
 }
+
 .tile--large-type p {
-  width: 0;
   margin: 0;
 }
+
 
 @media screen and (min-width: 640px) {
   html {
@@ -191,10 +184,7 @@ a {
     grid-column: span 2;
     padding-top: 50%;
   }
-  .tile__body--large-type {
-    top: var(--gutter);
-    left: var(--gutter);
-  }
+
 
   .tile--height-2x {
     grid-row: span 2;

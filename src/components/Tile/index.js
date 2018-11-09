@@ -2,6 +2,19 @@ import { Link } from "react-router-dom";
 import Switch from "../helpers/Switch";
 import React from "react";
 
+import Logo from './Logo'
+
+const CompanyTile = ({ title, body, bem }) => (
+  <div className={bem("")}>
+    <div className={bem("wrapper")}>
+      <h1 className={bem("title")}>
+        <Logo className='App-logo' ariaLabel='logo' />
+      </h1>
+      <p className={bem("body")} dangerouslySetInnerHTML={{ __html: body }} />
+    </div>
+  </div>
+);
+
 const TextTile = ({ title, body, bem }) => (
   <div className={bem("")}>
     <div className={bem("wrapper")}>
@@ -35,6 +48,7 @@ export default props => {
 
   return (
     <Switch match={props.type}>
+      <CompanyTile case="company" {...props} bem={bem("tile")} />
       <TextTile case="markup" {...props} bem={bem("tile")} />
       <ImageTile case="image" {...props} bem={bem("tile")} />
       <EmptyTile case="empty" {...props} bem={bem("tile")} />

@@ -7,8 +7,11 @@ import kosmos_pln1 from "./images/139_kosmos/139_01_Pläne/Burkhard-Luethi_139_K
 const allImages = Object.entries(BL).map(([title, src], i) => ({
   key: `${title}-${i}`,
   mods: [
-    Math.random() > 0.5 ? "height-2x" : "default",
-    Math.random() > 0.5 ? "width-2x" : "default"
+    Math.random() > 0.5
+      ? "width-2x"
+      : Math.random() > 0.5
+      ? "height-2x"
+      : "default"
   ],
   title,
   type: "image",
@@ -16,24 +19,14 @@ const allImages = Object.entries(BL).map(([title, src], i) => ({
   href: "kosmos"
 }));
 
-const logo = {
+const contact = {
   key: 0,
   mods: ["logo"],
   title: "",
-  type: "markup",
+  type: "company",
   body:
-    "<h1><span>Burkhard & Lüthi</span> <span>Architektur GmbH</span></h1><br><p>Dufourstrasse 35 <br/> CH 8008 Zürich<br/><br/><a href='tel:+41 44 262 50 40'>+41 44 262 50 40</a> <br/> <a href='mailto:bul@burkhard-luethi.ch'>bul@burkhard-luethi.ch</a></p>",
+    "<p>Dufourstrasse 35 <br/> CH 8008 Zürich<br/><br/><a href='tel:+41 44 262 50 40'>+41 44 262 50 40</a> <br/> <a href='mailto:bul@burkhard-luethi.ch'>bul@burkhard-luethi.ch</a></p>",
   href: "#"
-};
-
-const contact = {
-  key: 0,
-  mods: ["contact"],
-  title: "KONTAKT",
-  type: "markup",
-  body:
-    "Dufourstrasse 35 <br/> CH 8008 Zürich <br/> <a href='tel:+41 44 262 50 40'>+41 44 262 50 40</a> <br/> <a href='mailto:bul@burkhard-luethi.ch'>bul@burkhard-luethi.ch</a>",
-  href: "kontakt"
 };
 
 const kosmos_sections = [
@@ -98,7 +91,7 @@ const kosmos_sections = [
 
 const kosmos = {
   key: 1,
-  mods: ["width-2x", "height-2x"],
+  mods: ["height-2x"],
   // mods: ["height-2x"],
   // mods: ["width-2x"],
   title: "kosmos",
@@ -110,7 +103,7 @@ const kosmos = {
 };
 const text = {
   key: 2,
-  mods: ["height-2x", "large-type"],
+  mods: ["large-type"],
   title: "kosmos",
   type: "markup",
   body:
@@ -130,14 +123,23 @@ const emptyTile = {
   type: "empty"
 };
 
-const result = allImages.reduce((acc, x) => {
-  return [
-    ...acc,
-    ...(Math.random() < 0.9 ? [x, emptyTile] : [x])
-  ];
-}, []);
+const [imageTile1, imageTile2, imageTile3, ...imageTiles] = allImages.reduce(
+  (acc, x) => {
+    return [...acc, ...(Math.random() < 0.9 ? [x, emptyTile] : [x])];
+  },
+  []
+);
 
 export default [kosmos, ...allImages];
 export const dataList = [...allImages];
 export const dataFooter = [toTop];
-export const dataTiles =[logo, kosmos, text, ...result];
+
+export const dataTiles = [
+  contact,
+  kosmos,
+  imageTile1,
+  imageTile2,
+  text,
+  imageTile3,
+  ...imageTiles
+];
