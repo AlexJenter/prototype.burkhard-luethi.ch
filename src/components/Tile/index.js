@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Switch from "../helpers/Switch";
 import React from "react";
 
-import Logo from './Logo'
+import Logo from '../../images/assets/Logo'
 
 const CompanyTile = ({ title, body, bem }) => (
   <div className={bem("")}>

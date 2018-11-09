@@ -1,11 +1,15 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import PageDots from "../PageDots";
-import PrevNextBtn from "../PrevNextBtn";
+
 import List from "../helpers/List";
 import Switch from "../helpers/Switch";
-import data from "../../data";
+import data from "../../data/index";
 import * as U from "../../utils";
+
+import PageDots from "../PageDots";
+import PrevNextBtn from "../PrevNextBtn";
+import Icon from '../Icon';
+
 import "./index.css";
 
 const Markup = props => (
@@ -77,7 +81,9 @@ export default class Fullpage extends Component {
 
     return (
       <React.Fragment>
-        <Link className="back-link" to={`${process.env.PUBLIC_URL}/`}>╳</Link>
+        <Link className="back-link" to={`${process.env.PUBLIC_URL}/`}>
+        <Icon type="close" />
+        </Link>
         <h2 className="page-title">{title}</h2>
         <main id="full-page">
           <div className="slide-container" style={containerStyle}>

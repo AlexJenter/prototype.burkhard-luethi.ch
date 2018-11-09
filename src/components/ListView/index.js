@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-
 import { Link } from "react-router-dom";
 
+import Icon from '../Icon';
 import "./index.css";
 
 export class ListView extends Component {
@@ -23,7 +23,9 @@ export class ListView extends Component {
         <button
           className="list-view__toggle"
           onClick={this.toggle}
-        >{`\u2630`}</button>
+        >
+        <Icon type={!open ? 'open' : 'close'} />
+        </button>
         <div className={`list-view__container${open ? " open" : ""}`}>
           {children}
         </div>

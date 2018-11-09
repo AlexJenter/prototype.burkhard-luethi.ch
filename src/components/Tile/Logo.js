@@ -1,6 +1,6 @@
 import React from 'react'
 export default () => <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="160.012px" height="60.429px" viewBox="0 0 160.012 60.429" enable-background="new 0 0 160.012 60.429"
+	 width="160.012px" height="60.429px" viewBox="0 0 160.012 60.429"
 	 xmlSpace="preserve">
 <path fill="#030405" d="M28.843,19.957l0.447-2.013h-0.056c-1.286,1.584-2.973,2.377-5.058,2.377c-2.815,0-4.221-1.287-4.221-3.857
 	c0-0.149,0.014-0.34,0.041-0.572c0.028-0.234,0.065-0.471,0.112-0.714c0.046-0.241,0.093-0.469,0.141-0.684

@@ -4,7 +4,7 @@ import Tile from "./components/Tile";
 import List from "./components/helpers/List";
 import FullPage from "./components/FullPage";
 import {ListView , ListItem} from "./components/ListView";
-import { dataTiles, dataList, dataFooter } from "./data";
+import { dataTiles, dataList, dataFooter } from "./data/index";
 import "./App.css";
 
 const Index = () => (
