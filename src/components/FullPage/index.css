@@ -74,8 +74,8 @@ main#full-page {
 .back-link {
   position: absolute;
   top: calc(var(--gutter) * 0.5);
-  left: calc(var(--gutter) * 0.5);
-  transform: translate(-50%, -50%);
+  right: calc(var(--gutter) * 0.5);
+  transform: translate(50%, -50%);
 
   z-index: 1000;
   cursor: pointer;
