@@ -2,10 +2,10 @@
   --s: 15px;
   --m: 40px;
   position: absolute;
-  left: 0;
-  width: 100%;
-  height: var(--gutter);
+  right: 0;
   bottom: 0;
+  width: var(--gutter);
+  height: var(--gutter);
   display: flex;
   justify-content: center;
   align-items: center;
