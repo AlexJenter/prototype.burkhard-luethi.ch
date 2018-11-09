@@ -35,5 +35,5 @@ export class ListView extends Component {
 }
 
 export const ListItem = ({ title, href }) => (
-  <Link to={`${href}/`}>{title}</Link>
+  <Link className={`list-item--${title}`} to={`${href}/`}>{title}</Link>
 );

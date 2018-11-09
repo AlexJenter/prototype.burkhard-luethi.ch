@@ -9,7 +9,6 @@ import "./App.css";
 
 const Index = () => (
   <Fragment>
-    {/* <Header /> */}
     <ListView>
       <List iterable={dataList}>{item => <ListItem {...item} />}</List>
     </ListView>

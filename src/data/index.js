@@ -1,4 +1,5 @@
 import kosmos_sections from './sections-kosmos'
+import about_sections from './sections-about'
 import backToTopLink from './backToTopLink'
 import emptyTile from './emptyTile'
 import * as BL from "../images/bl";
@@ -54,8 +55,18 @@ const [imageTile1, imageTile2, imageTile3, ...imageTiles] = allImages.reduce(
   []
 );
 
-export default [kosmosTile, ...allImages];
-export const dataList = [...allImages];
+const aboutTile = {
+  key: 1,
+  mods: [],
+  title: "buero",
+  type: "image",
+  src: BL.kosmos,
+  href: "buero",
+  sections: about_sections
+};
+
+export default [aboutTile, kosmosTile, ...allImages];
+export const dataList = [aboutTile, ...allImages];
 export const dataFooter = [backToTopLink];
 
 export const dataTiles = [

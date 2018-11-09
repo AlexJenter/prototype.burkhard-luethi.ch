@@ -12,9 +12,10 @@ import Icon from '../Icon';
 
 import "./index.css";
 
-const Markup = props => (
-  <div {...props} dangerouslySetInnerHTML={{ __html: props.body }} />
-);
+const Markup = props => {
+  const { className } = props;
+  return <div {...{ className }} dangerouslySetInnerHTML={{ __html: props.body }} />
+}
 const Image = props => <img {...props} alt="" />;
 
 const Table = props => (

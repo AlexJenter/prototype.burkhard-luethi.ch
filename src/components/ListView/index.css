@@ -40,3 +40,14 @@
   font-size: 25px;
   text-transform: uppercase;
 }
+.list-item--buero {
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+  position: relative;
+}
+.list-item--buero::after {
+  content: "—";
+  display: block;
+  position: absolute;
+  bottom: 0;
+}
