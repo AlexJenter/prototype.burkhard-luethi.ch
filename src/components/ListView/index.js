@@ -39,7 +39,7 @@ class Category extends Component {
 
 export class ListView extends Component {
   state = {
-    open: true
+    open: false
   };
 
   toggle = () => {

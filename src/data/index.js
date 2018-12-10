@@ -3,11 +3,28 @@ import about_sections from "./sections-about";
 import backToTopLink from "./backToTopLink";
 import emptyTile from "./emptyTile";
 import categories from "./categories";
-import * as utils from "../utils"
+import * as utils from "../utils";
 import * as BL from "../images/bl";
+
+const inlineStyles = {
+  logo: {
+    // background: "transparent"
+  },
+  tile: {
+    title: {
+      left: -6,
+      top: 0
+      // transform: `translateY(-100%)`
+    }
+  },
+  date: {
+    // display: 'none'
+  }
+};
 
 const contact = {
   key: 100,
+  inline: inlineStyles.logo,
   mods: ["logo"],
   title: "",
   type: "company",
@@ -19,6 +36,7 @@ const contact = {
 const kosmosTile = {
   key: 1,
   mods: ["height-2x"],
+  inline: inlineStyles.tile,
   title: "kosmos",
   type: "image",
   src: BL.kosmos,
@@ -38,8 +56,6 @@ const text = {
 const randomCategory = () =>
   categories[Math.ceil(Math.random() * categories.length) - 1];
 
-
-
 const allImages = Object.entries(BL).map(([title, src], i) => ({
   key: `${title}-${i}`,
   mods: [
@@ -49,6 +65,7 @@ const allImages = Object.entries(BL).map(([title, src], i) => ({
       ? "height-2x"
       : "default"
   ],
+  inline: inlineStyles.tile,
   title,
   type: "image",
   src,
@@ -56,16 +73,37 @@ const allImages = Object.entries(BL).map(([title, src], i) => ({
   category: randomCategory().slug
 }));
 
-const groupedImages = utils.groupBy(allImages, 'category');
+const groupedImages = utils.groupBy(allImages, "category");
 
+const date = num => ({
+  key: 1,
+  mods: [],
+  inline: inlineStyles.date,
+  year: num,
+  type: "date"
+});
 
-
-const [imageTile1, imageTile2, imageTile3, ...imageTiles] = allImages.reduce(
-  (acc, x) => {
+const [imageTile1, imageTile2, imageTile3, ...imageTiles] = allImages
+  .reduce((acc, x) => {
     return [...acc, ...(Math.random() < 0.9 ? [x, emptyTile] : [x])];
-  },
-  []
-);
+  }, [])
+  .reduce(
+    (acc, x) => {
+      return Math.random() > 0.9
+        ? {
+            arr: [
+              ...acc.arr,
+              ...[x, date(acc.year)]
+            ],
+            year: --acc.year
+          }
+        : {
+            arr: [ ...acc.arr, x ],
+            year: acc.year
+          };
+    },
+    { arr: [], year: 2017 }
+  )["arr"];
 
 const aboutTile = {
   key: 1,
@@ -78,7 +116,7 @@ const aboutTile = {
 };
 
 export default [aboutTile, kosmosTile, ...allImages];
-export const dataList = groupedImages;  
+export const dataList = groupedImages;
 export const dataFooter = [backToTopLink];
 
 export const dataTiles = [
