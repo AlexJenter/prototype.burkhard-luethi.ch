@@ -1,7 +1,9 @@
-import kosmos_sections from './sections-kosmos'
-import about_sections from './sections-about'
-import backToTopLink from './backToTopLink'
-import emptyTile from './emptyTile'
+import kosmos_sections from "./sections-kosmos";
+import about_sections from "./sections-about";
+import backToTopLink from "./backToTopLink";
+import emptyTile from "./emptyTile";
+import categories from "./categories";
+import * as utils from "../utils"
 import * as BL from "../images/bl";
 
 const contact = {
@@ -33,6 +35,11 @@ const text = {
     "Wir helfen gerne bei ihrer Bau-eingabe <br><br><a href='kosmos'>fragen sie uns</a>"
 };
 
+const randomCategory = () =>
+  categories[Math.ceil(Math.random() * categories.length) - 1];
+
+
+
 const allImages = Object.entries(BL).map(([title, src], i) => ({
   key: `${title}-${i}`,
   mods: [
@@ -45,8 +52,13 @@ const allImages = Object.entries(BL).map(([title, src], i) => ({
   title,
   type: "image",
   src,
-  href: "kosmos"
+  href: "kosmos",
+  category: randomCategory().slug
 }));
+
+const groupedImages = utils.groupBy(allImages, 'category');
+
+
 
 const [imageTile1, imageTile2, imageTile3, ...imageTiles] = allImages.reduce(
   (acc, x) => {
@@ -66,7 +78,7 @@ const aboutTile = {
 };
 
 export default [aboutTile, kosmosTile, ...allImages];
-export const dataList = [aboutTile, ...allImages];
+export const dataList = groupedImages;  
 export const dataFooter = [backToTopLink];
 
 export const dataTiles = [

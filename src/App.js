@@ -9,9 +9,7 @@ import "./App.css";
 
 const Index = () => (
   <Fragment>
-    <ListView>
-      <List iterable={dataList}>{item => <ListItem {...item} />}</List>
-    </ListView>
+    <ListView/>
     <main id="index">
       <List iterable={dataTiles}>{item => <Tile {...item} />}</List>
     </main>

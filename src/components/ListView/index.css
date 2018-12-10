@@ -32,7 +32,8 @@
   transform: translateX(-100%)
 }
 
-.list-view__container a {
+.list-view__container a,
+.list-view__container button {
   text-decoration: none;
   display: block;
   height: var(--gutter);
@@ -51,6 +52,19 @@
   position: absolute;
   bottom: 0;
 }
+
+.category__container:before {
+  content: "+"
+}
+
+.category__container.open:before {
+  content: "-"
+}
+
+.category__container a {
+  padding-left: calc(var(--gutter) * 2);
+}
+
 
 @media screen and (min-width: 640px) {
   .list-view__container.open {
