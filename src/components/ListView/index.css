@@ -46,19 +46,14 @@
   margin-bottom: 1em;
   position: relative;
 }
-.list-item--buero::after {
-  content: "—";
-  display: block;
+
+.category__label:before {
+  content: "+";
   position: absolute;
-  bottom: 0;
+  left: calc(var(--gutter) * 0.5);
 }
-
-.category__container:before {
-  content: "+"
-}
-
-.category__container.open:before {
-  content: "-"
+.category__label.open:before {
+  content: "–";
 }
 
 .category__container a {

@@ -25,8 +25,11 @@ class Category extends Component {
 
     return (
       <div className={`category__container${open ? " open" : ""}`}>
-        <button onClick={this.toggle}>
-          <div className="category__label"> {text} </div>
+        <button
+          onClick={this.toggle}
+          className={`category__label${open ? " open" : ""}`}
+        >
+          {text}
         </button>
         {open && categoryEntries.map(ListItem)}
       </div>
@@ -64,7 +67,7 @@ export class ListView extends Component {
 }
 
 export const ListItem = ({ title, href }) => (
-  <Link className={`list-item--${title}`} to={`${href}/`}>
+  <Link className={`list-item--${href}`} to={`${href}/`}>
     {title}
   </Link>
 );
